@@ -1,0 +1,107 @@
+/*
+    InfoViz
+    @author  Zheng Li <lizheng@lizheng.me>
+    @github https://github.com/nocoo/InfoViz
+    @license MIT
+*/
+
+/* CSS Reset by Eric Meyer. */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, form,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, legend,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, label,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* Styles */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+.p-demo { background: #F0F0F0; font-family: 'Lucida Grande', Helvetica, Arial, sans-serif; }
+.p-demo a { color: #999; }
+.p-demo header { height: 80px; margin: 0 10px; background: #FDFDFD; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom: 1px solid #EEE; }
+.p-demo header h1 { margin: 10px; padding-top: 10px; }
+.p-demo header a { width: 100px; height: 60px; display: block; background: url('../images/infoviz_logo_small.png') center no-repeat; background-image: -webkit-image-set(url('../images/infoviz_logo_small.png') 1x, url('../images/infoviz_logo_small@2x.png') 2x); }
+.p-demo .container { background: #FDFDFD; margin: 0 10px; padding-bottom: 40px; }
+.p-demo .container h1 { font-size: 1.5em; margin-left: 10px; padding-top: 30px; color: #333; }
+.p-demo .container h2 { margin-left: 10px; line-height: 36px; padding-top: 10px; color: #555; -webkit-margin-before: 0; -webkit-margin-after: 0; }
+.p-demo .container h2 a { float: right; margin-right: 10px; font-size: 12px; text-decoration: none; }
+.p-demo .container h2 a:hover { text-decoration: underline; }
+.p-demo footer { height: 28px; margin: 0 10px 10px 10px; background: #FDFDFD; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-top: 1px solid #EEE; }
+.p-demo footer p { color: #999; text-align: center; font-size: 12px; line-height: 30px; }
+
+.p-demo .container .infoviz { margin: 0px 10px 10px 10px; height: 350px; }
+
+.p-index .container .infoviz#i_piechart1 { height: 280px; }
+.p-index .container .infoviz#i_piechart2 { height: 280px; }
+.p-index .container .infoviz#i_radarchart1 { height: 350px; }
+.p-index .container .infoviz#i_radarchart2 { height: 350px; }
+.p-index .container .infoviz#i_radialchart1 { height: 350px; }
+.p-index .container .infoviz#i_radialchart2 { height: 350px; }
+.p-index .container .infoviz#i_tagcloud1 { height: 240px; }
+.p-index .container .infoviz#i_tagcloud2 { height: 240px; }
+.p-index .container .infoviz#i_basictree { height: 450px; }
+.p-index .container .infoviz#i_smithgraph { height: 850px; }
+.p-index .container .infoviz#i_heatmap { height: 850px; }
+.p-index .container .infoviz#i_streamchart { height: 850px; }
+.p-index .container .infoviz#i_foldertree1 { height: 465px; }
+.p-index .container .infoviz#i_foldertree2 { height: 465px; }
+
+ul.boxes { margin-left: 10px; }
+ul.boxes li { background-color: #EB540A; }
+ul.boxes li:nth-child(n) { background-color: #3A89C9; }
+ul.boxes li:nth-child(n+1) { background-color: #EB540A; }
+ul.boxes li:nth-child(n+2) { background-color: #5AAD34; }
+ul.boxes li:nth-child(n+3) { background-color: #FECC09; }
+ul.boxes li:nth-child(n+4) { background-color: #6699FF; }
+ul.boxes li:nth-child(n+5) { background-color: #14B694; }
+ul.boxes li:nth-child(n+6) { background-color: #104386; }
+ul.boxes li:nth-child(n+7) { background-color: #DA0101; }
+
+ul.boxes li { float: left; width: 206px;  margin: 10px 6px 0 0; border: 1px solid #CCC; color: #FFF; }
+ul.boxes li h1 { font-size: 20px; display: block; padding: 0; margin: 0; line-height: 40px; text-align: center; }
+ul.boxes li h1 a { display: block; border: none; color: #FFF; }
+ul.boxes li p { font-size: 12px; padding: 0; margin: 0px 0 10px 0; text-align: center; }
+
+.p-history ul.boxes h1 { padding: 0; margin: 0; font-size: 1.5em; }
+.p-test ul.boxes h1 { padding: 0; margin: 0; font-size: 1em; }
+.p-test ul.boxes li { background: #FFF; width: 277px; height: 100px; border-radius: 4px; }
+.p-test ul.boxes li a { line-height: 100px; text-align: right; padding-right: 10px; color: #555; font-size: 1em; opacity: 0; }
+.p-test ul.boxes li a:hover { opacity: 1; }
+.p-test ul.boxes li.linechart { background: url('../images/test_linechart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_linechart.png') 1x, url('../images/test_linechart@2x.png') 2x); }
+.p-test ul.boxes li.barchart { background: url('../images/test_barchart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_barchart.png') 1x, url('../images/test_barchart@2x.png') 2x); }
+.p-test ul.boxes li.stackchart { background: url('../images/test_stackchart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_stackchart.png') 1x, url('../images/test_stackchart@2x.png') 2x); }
+.p-test ul.boxes li.bubblechart { background: url('../images/test_bubblechart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_bubblechart.png') 1x, url('../images/test_bubblechart@2x.png') 2x); }
+.p-test ul.boxes li.stockchart { background: url('../images/test_stockchart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_stockchart.png') 1x, url('../images/test_stockchart@2x.png') 2x); }
+.p-test ul.boxes li.streamchart { background: url('../images/test_streamchart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_streamchart.png') 1x, url('../images/test_streamchart@2x.png') 2x); }
+.p-test ul.boxes li.piechart { background: url('../images/test_piechart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_piechart.png') 1x, url('../images/test_piechart@2x.png') 2x); }
+.p-test ul.boxes li.radarchart { background: url('../images/test_radarchart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_radarchart.png') 1x, url('../images/test_radarchart@2x.png') 2x); }
+.p-test ul.boxes li.radialchart { background: url('../images/test_radialchart.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_radialchart.png') 1x, url('../images/test_radialchart@2x.png') 2x); }
+.p-test ul.boxes li.smithgraph { background: url('../images/test_smithgraph.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_smithgraph.png') 1x, url('../images/test_smithgraph@2x.png') 2x); }
+.p-test ul.boxes li.heatmap { background: url('../images/test_heatmap.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_heatmap.png') 1x, url('../images/test_heatmap@2x.png') 2x); }
+.p-test ul.boxes li.worldmap { background: url('../images/test_worldmap.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_worldmap.png') 1x, url('../images/test_worldmap@2x.png') 2x); }
+.p-test ul.boxes li.basictree { background: url('../images/test_basictree.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_basictree.png') 1x, url('../images/test_basictree@2x.png') 2x); }
+.p-test ul.boxes li.foldertree { background: url('../images/test_foldertree.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_foldertree.png') 1x, url('../images/test_foldertree@2x.png') 2x); }
+.p-test ul.boxes li.tagcloud { background: url('../images/test_tagcloud.png') center no-repeat; background-image: -webkit-image-set(url('../images/test_tagcloud.png') 1x, url('../images/test_tagcloud@2x.png') 2x); }
+
+.p-test .container .infoviz.i-smithgraph { width: 850px; height: 850px; }
+.p-test .container .infoviz.i-heatmap { width: 850px; height: 850px; }
+.p-test .container .infoviz.i-basictree { width: 850px; height: 450px; }
+.p-test .container .infoviz.i-streamchart { width: 850px; height: 850px; }
+.p-test .container .infoviz.i-foldertree { width: 405px; height: 465px; }
+
+.p-test.p-foldertree .container section { float: left; width: 425px; margin-right: 10px; }
+
+.p-test a.button { padding: 0 10px; height: 28px; line-height: 28px; color: #FFF; display: block; cursor: pointer; background: #eb540a; text-align: center; float: right; margin-top: 4px; }
+
+.p-license .license h1 { margin-bottom: 20px; }
+.p-license .license p { margin-left: 10px; font-size: 14px; color: #333; line-height: 20px; margin-bottom: 20px; }
